@@ -25,7 +25,7 @@ app.get("/", function(req,res) {
 });
 
 app.get("/appalti", function(req,res) {
-    res.json(appalti);
+    res.send(appalti);
 });
 
 app.get('/appalti/CIG/:cig', function(req, res){
