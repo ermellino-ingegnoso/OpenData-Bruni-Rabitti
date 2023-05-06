@@ -17,7 +17,7 @@ app.use(cors({
   }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-var appalti= require('./public/data/appalti.json')
+var appalti = require('./public/data/appalti.json')
 
 
 app.get("/", function(req,res) {
