@@ -1,25 +1,17 @@
 {
-    "version": 2,
-    "builds": [
+    "$schema": "https://opendatatep.vercel.app/test",
+    "rewrites": [
       {
-        "src": "api/api.js",
-        "use": "@now/node"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "api/api.js"
-      }
-    ],
-    "functions": {
-      "api/api.js": {
-        "memory": 3008,
-        "maxDuration": 30
+        "source": "/",
+        "destination": "./api/api"
       },
-      "api/*.js": {
-        "memory": 3008,
-        "maxDuration": 30
+      {
+        "source": "/appalti",
+        "destination": "./api/api.js"
       }
+    ],
+    "github": {
+      "silent": true,
+      "autoJobCancelation": true
     }
   }
