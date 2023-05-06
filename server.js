@@ -76,7 +76,6 @@ app.use("*", function(req,res,next){
     res.send('Url non presente');
 });
 
-module.exports = app; 
 const server = app.listen(app.get('port'), function(){
     console.log('Server in ascolto');
 
