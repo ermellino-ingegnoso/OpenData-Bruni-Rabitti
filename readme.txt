@@ -14,7 +14,7 @@ TIPOLOGIA CONTRATTO
 
 API offerte:
 
-- file intero:							URL/appalti
+- file intero:							    URL/appalti
 - filtro per CIG:							URL/appalti/CIG/[**********]
 - filtro per da Data Pubblicazione ad oggi:	URL/appalti/dataAdOggi/[AAAA-MM-GG]
 - filtro per Data Pubblicazione:			URL/appalti/data/[AAAA-MM-GG]
