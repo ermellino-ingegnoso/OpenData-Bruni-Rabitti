@@ -22,11 +22,13 @@ app.get("/", function(req,res) {
 app.get("/appalti", function(req,res) {
     res.json(appalti);
 });
+app.get("/appalti", function(req,res) {
+    res.json(appalti);
+});
 app.use("*", function(req,res,next){
     res.status(404); 
     res.send('Url non presente');
 }); 
-
 const server = app.listen(app.get('port'), function(){
     console.log('Server in ascolto');
 
