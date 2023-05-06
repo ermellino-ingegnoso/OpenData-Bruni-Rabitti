@@ -1,7 +1,7 @@
 var listAppalti;
 
 async function loadAppalti(){
-    listAppalti=await (await fetch(appalti)).json()
+    listAppalti=await (await fetch("../data/appalti.json")).json()
 }
 
 function generateTable(list)
