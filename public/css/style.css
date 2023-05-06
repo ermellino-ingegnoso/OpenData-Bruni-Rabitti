@@ -34,6 +34,11 @@ header,footer{
     margin: 0 5% 0 5%;
 }
 
+body>div{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
 div>*{
     margin: 0.3em;
 }
@@ -51,4 +56,43 @@ footer{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+}
+
+
+table,tr,th,td{
+    border: 1px solid black;
+}
+
+th>div{
+    display: flex;
+    height: 100%;
+}
+
+th>div>div{
+    height: 100%;
+}
+
+.table_arrow{
+    flex-basis: 2%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: start;
+}
+
+
+#dati{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+table{
+    display: block;
+    max-width: 90%;
+    max-height: 500px;
+    overflow-y: scroll;
+    border-collapse: collapse;
+    align-self: center;
 }
