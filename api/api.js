@@ -7,6 +7,8 @@ const { json } = require("body-parser");
 const fs = require("fs");
 let app = express();
 
+app.set('port', process.env.PORT || 3000);
+app.set('view engine', 'pug');
 app.set("appName", "Appalti");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static(__dirname + "/public"));
@@ -78,3 +80,8 @@ app.get("/appalti/contratto/:contratto", function (req, res) {
 });
 
 module.exports = app;
+
+const server = app.listen(app.get('port'), function(){
+    console.log('Server in ascolto');
+
+});
