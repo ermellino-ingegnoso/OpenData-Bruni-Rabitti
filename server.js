@@ -24,6 +24,11 @@ app.get("/", function(req,res) {
     res.sendFile('index.html');
 });
 
+app.get("/test", function(req,res) {
+    res.send('test');
+});
+
+
 app.get("/appalti", function(req,res) {
     res.json(appalti);
 });
