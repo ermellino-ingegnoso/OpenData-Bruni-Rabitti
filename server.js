@@ -17,7 +17,7 @@ app.use(cors({
   }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-var appalti = JSON.require('./public/data/appalti.json')
+var appalti = require('./public/data/appalti.json')
 
 
 app.get("/", function(req,res) {
@@ -25,7 +25,7 @@ app.get("/", function(req,res) {
 });
 
 app.get("/appalti", function(req,res) {
-    res.send(appalti);
+    res.send(JSON.appalti);
 });
 
 app.get('/appalti/CIG/:cig', function(req, res){
