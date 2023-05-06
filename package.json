@@ -1,14 +1,22 @@
 {
-  "name": "bruni_rabitti_opendata_tep",
+  "name": "opendata-bruni-rabitti",
   "version": "1.0.0",
-  "description": "",
+  "description": "https://dati.anticorruzione.it/superset/dashboard/appalti/",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ermellino-ingegnoso/OpenData-Bruni-Rabitti.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ermellino-ingegnoso/OpenData-Bruni-Rabitti/issues"
+  },
+  "homepage": "https://github.com/ermellino-ingegnoso/OpenData-Bruni-Rabitti#readme",
   "dependencies": {
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
