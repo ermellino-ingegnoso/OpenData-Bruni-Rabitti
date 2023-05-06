@@ -15,6 +15,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 var appalti = require("./public/data/appalti.json");
 
+export default async function handler(request, event) {
+    return Response.json({
+        success: true,
+    });
+}
+
 app.get("/test", function (req, res) {
     res.send("test");
 });
