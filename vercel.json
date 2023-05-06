@@ -7,7 +7,7 @@
       },
       {
         "source": "/appalti",
-        "destination": "./api/api.js"
+        "destination": "./api/api"
       }
     ],
     "github": {
