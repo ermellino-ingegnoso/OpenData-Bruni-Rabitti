@@ -63,22 +63,22 @@ table,tr,th,td{
     border: 1px solid black;
 }
 
-th>div{
-    display: flex;
+th div{
     height: 100%;
 }
 
-th>div>div{
-    height: 100%;
-}
+
 
 .table_arrow{
-    flex-basis: 2%;
-    height: 100%;
+    min-height: 20%;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     flex-direction: column;
     align-items: start;
+}
+
+.table_arrow span{
+    cursor: pointer;
 }
 
 
@@ -96,3 +96,5 @@ table{
     border-collapse: collapse;
     align-self: center;
 }
+
+

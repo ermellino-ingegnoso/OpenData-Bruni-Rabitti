@@ -53,7 +53,7 @@ app.get('/appalti/data/:data', function(req,res){
 
 app.get('/appalti/valBaseAsta/:minmax', function(req,res){
     const [min, max] = req.params.minmax.split('-').map(val => parseInt(val));
-    const filteredAppalti = appalti.filter(appalto => appalto["VALORE A BASE D'ASTA"] >= min && appalto["VALORE A BASE D'ASTA"] <= max);
+    const filteredAppalti = appalti.filter(appalto => appalto["VALORE A BASE DI ASTA"] >= min && appalto["VALORE A BASE DI ASTA"] <= max);
     res.json(filteredAppalti);
 });
 
