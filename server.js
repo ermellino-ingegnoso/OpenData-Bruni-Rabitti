@@ -15,7 +15,7 @@ app.set('view engine', 'pug');
 app.use(express.static(__dirname + '/public'));
 app.use(cors({origin: '*'}));
 app.use(bodyParser.urlencoded({ extended: true }));
-
+/*esperimento di stocazzo*/
 app.get("/", function(req,res) {
     res.sendFile('index.html');
 });
