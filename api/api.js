@@ -6,7 +6,7 @@ const bodyParser=require("body-parser");
 const { json } = require('body-parser');
 const fs = require('fs');
 let app = express();
-
+/*
 app.set('port', process.env.PORT || 3000);
 app.set('appName', "Appalti");
 app.set('views', path.join(__dirname, 'views'));
@@ -16,7 +16,7 @@ app.use(cors({
     origin: '*'
   }));
 app.use(bodyParser.urlencoded({ extended: true }));
-
+*/
 var appalti = require('./public/data/appalti.json')
 
 app.get("/", function(req,res) {
