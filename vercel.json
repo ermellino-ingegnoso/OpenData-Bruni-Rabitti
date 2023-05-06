@@ -3,11 +3,11 @@
     "rewrites": [
       {
         "source": "/test",
-        "destination": "./api/api.js"
+        "destination": "api/api.js"
       },
       {
         "source": "/appalti",
-        "destination": "./api/api.js"
+        "destination": "api/api.js"
       }
     ],
     "github": {
