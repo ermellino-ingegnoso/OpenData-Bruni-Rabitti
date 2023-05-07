@@ -79,6 +79,12 @@ th div{
 
 .table_arrow span{
     cursor: pointer;
+    user-select: none;
+    display: block;
+    background-image: url("../img/arrow.png") !important;
+    background-size: cover;
+    width: 16px;
+    height: 16px;
 }
 
 

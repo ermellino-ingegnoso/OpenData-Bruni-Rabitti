@@ -11,7 +11,7 @@ function generateTable(list)
     document.getElementById("dati").innerHTML=`
         <table>
         <thead>
-            ${Object.keys(list[0]).reduce((tot,v)=>tot+="<th>"+"<div><div class='table_arrow'><span data-sort='"+v+"' data-currentsort=''>boh</span></div>"+"<div>"+v+"<div/></div>"+"</th>","")}
+            ${Object.keys(list[0]).reduce((tot,v)=>tot+="<th>"+"<div><div class='table_arrow'><span data-sort='"+v+"' data-currentsort=''></span></div>"+"<div>"+v+"<div/></div>"+"</th>","")}
         </thead>
         <tbody>
             ${list.reduce(function(tot,v){
