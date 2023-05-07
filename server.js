@@ -5,7 +5,7 @@ const cors = require('cors');
 const bodyParser=require("body-parser");
 const { json } = require('body-parser');
 const fs = require('fs');
-let app = express();
+var app = express();        // cambiato l'ambito di visibilità
 
 app.set('port', process.env.PORT || 3000);
 app.set('appName', "Appalti");
@@ -76,7 +76,6 @@ app.use("*", function(req,res,next){
     res.send('Url non presente');
 });
 
-    
 const server = app.listen(app.get('port'), function(){
     console.log('Server in ascolto');
 

@@ -1,0 +1,17 @@
+{
+    "$schema": "https://opendatatep.vercel.app/test",
+    "rewrites": [
+      {
+        "source": "/test",
+        "destination": "api/api.js"
+      },
+      {
+        "source": "/appalti",
+        "destination": "api/api.js"
+      }
+    ],
+    "github": {
+      "silent": true,
+      "autoJobCancelation": true
+    }
+  }
