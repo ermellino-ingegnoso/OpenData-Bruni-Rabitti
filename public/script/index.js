@@ -3,7 +3,7 @@ var listAppaltiSort;
 const currentSort=["asc","desc"]
 
 async function loadAppalti(){
-    listAppalti=await (await fetch("../data/appalti.json")).json()
+    listAppalti=await (await fetch("/appalti")).json()
 }
 
 function generateTable(list)
