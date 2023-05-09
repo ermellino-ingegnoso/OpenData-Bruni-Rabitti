@@ -24,7 +24,7 @@ app.get("/", function(req,res) {
 });
 
 app.get('/docs', (req, res) => {
-    fs.readFile('./readme.txt', (err, data) => {
+    fs.readFile('./public/data/docs.txt', (err, data) => {
       if (err) {
         res.status(500).send('Errore nel leggere il file.');
       } else {
