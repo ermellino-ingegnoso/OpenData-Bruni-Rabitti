@@ -1,6 +1,6 @@
 https://dati.anticorruzione.it/superset/dashboard/appalti/
 
-URL home page: URL
+URL home page: https://opendatatep.vercel.app/
 
 CIG,
 OGGETTO,
@@ -14,10 +14,10 @@ TIPOLOGIA CONTRATTO
 
 API offerte:
 
-- file intero:          				            URL/appalti
-- filtro per CIG:							              URL/appalti/CIG/[**********]
-- filtro per da Data Pubblicazione ad oggi: URL/appalti/dataAdOggi/[AAAA-MM-GG]
-- filtro per Data Pubblicazione:			      URL/appalti/data/[AAAA-MM-GG]
-- filtro per Valore a Base D'Asta:			    URL/appalti/valBaseAsta/[min-max]
-- filtro per Localizzazione:				        URL/appalti/loc/[Stringa]
-- filtro per Tipologia Contratto			      URL/appalti/contratto/[Stringa]
+- file intero:          				        opendatatep.vercel.app/appalti
+- filtro per CIG:							    opendatatep.vercel.app/appalti/CIG/[**********]
+- filtro per da Data Pubblicazione ad oggi:     opendatatep.vercel.app/appalti/dataAdOggi/[AAAA-MM-GG]
+- filtro per Data Pubblicazione:		        opendatatep.vercel.app/appalti/data/[AAAA-MM-GG]
+- filtro per Valore a Base D'Asta:			    opendatatep.vercel.app/appalti/valBaseAsta/[min-max]
+- filtro per Localizzazione:				    opendatatep.vercel.app/appalti/loc/[Stringa]
+- filtro per Tipologia Contratto			    opendatatep.vercel.app/appalti/contratto/[Stringa]
