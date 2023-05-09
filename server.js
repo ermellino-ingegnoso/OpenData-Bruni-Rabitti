@@ -23,17 +23,16 @@ app.get("/", function(req,res) {
     res.sendFile('index.html');
 });
 
-app.get('/docs', function(req, res) {
-    fs.readFile('./readme.txt', 'utf8', function(err, data) {
-        if(err) {
-            res.statusCode = 500
-            res.end(err);
-        } else{
-            res.setHeader('Content-Type', 'text/plain');
-            res.end(data);
-        }
-    })
-});
+app.get('/docs', (req, res) => {
+    fs.readFile('./readme.txt', (err, data) => {
+      if (err) {
+        res.status(500).send('Errore nel leggere il file.');
+      } else {
+        res.setHeader('Content-Type', 'text/plain');
+        res.send(data);
+      }
+    });
+  });
 
 app.get("/appalti", function(req,res) {
     res.json(appalti);
