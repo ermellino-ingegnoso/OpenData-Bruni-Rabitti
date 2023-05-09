@@ -18,7 +18,7 @@ app.use(cors({
 app.use(bodyParser.urlencoded({ extended: true }));
 
 var appalti = require('./public/data/appalti.json')
-
+var docs = require('./readme.txt');
 
 app.get("/", function(req,res) {
     res.sendFile('index.html');
@@ -65,7 +65,9 @@ app.get('/appalti/contratto/:contratto', function(req,res){
     const filteredAppalti = appalti.filter(appalto => appalto["TIPOLOGIA CONTRATTO"].toLowerCase() === contratto.toLowerCase());
     res.json(filteredAppalti);
 });
-
+app.get('/docs', function(req, res) {
+    res.sendFile(docs);
+});
 
 app.use("*", function(req,res,next){
     res.status(404); 
