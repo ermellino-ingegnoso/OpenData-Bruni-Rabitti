@@ -14,10 +14,10 @@ TIPOLOGIA CONTRATTO
 
 API offerte:
 
-- file intero:          				        opendatatep.vercel.app/appalti
-- filtro per CIG:							    opendatatep.vercel.app/appalti/CIG/[**********]
-- filtro per da Data Pubblicazione ad oggi:     opendatatep.vercel.app/appalti/dataAdOggi/[AAAA-MM-GG]
-- filtro per Data Pubblicazione:		        opendatatep.vercel.app/appalti/data/[AAAA-MM-GG]
-- filtro per Valore a Base D'Asta:			    opendatatep.vercel.app/appalti/valBaseAsta/[min-max]
-- filtro per Localizzazione:				    opendatatep.vercel.app/appalti/loc/[Stringa]
-- filtro per Tipologia Contratto			    opendatatep.vercel.app/appalti/contratto/[Stringa]
+- file intero:__________________________________opendatatep.vercel.app/appalti
+- filtro per CIG:_______________________________opendatatep.vercel.app/appalti/CIG/[**********]
+- filtro per da Data Pubblicazione ad oggi:_____opendatatep.vercel.app/appalti/dataAdOggi/[AAAA-MM-GG]
+- filtro per Data Pubblicazione:________________opendatatep.vercel.app/appalti/data/[AAAA-MM-GG]
+- filtro per Valore a Base D'Asta:______________opendatatep.vercel.app/appalti/valBaseAsta/[min-max]
+- filtro per Localizzazione:____________________opendatatep.vercel.app/appalti/loc/[Stringa]
+- filtro per Tipologia Contratto:_______________opendatatep.vercel.app/appalti/contratto/[Stringa]
