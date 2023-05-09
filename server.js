@@ -17,13 +17,23 @@ app.use(cors({
   }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-var appalti = require('./public/data/appalti.json')
-var docs = require('./readme.txt');
+var appalti = require('./public/data/appalti.json');
 
 app.get("/", function(req,res) {
     res.sendFile('index.html');
 });
 
+app.get('/docs', function(req, res) {
+    fs.readFile('./readme.txt', 'utf8', function(err, data) {
+        if(err) {
+            res.statusCode = 500
+            res.end(err);
+        } else{
+            res.setHeader('Content-Type', 'text/plain');
+            res.end(data);
+        }
+    })
+});
 
 app.get("/appalti", function(req,res) {
     res.json(appalti);
