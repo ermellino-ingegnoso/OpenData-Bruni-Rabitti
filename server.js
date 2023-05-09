@@ -18,7 +18,7 @@ app.use(cors({
 app.use(bodyParser.urlencoded({ extended: true }));
 
 var appalti = require('./public/data/appalti.json')
-
+var docs = require('./readme.txt');
 
 app.get("/", function(req,res) {
     res.sendFile('index.html');
