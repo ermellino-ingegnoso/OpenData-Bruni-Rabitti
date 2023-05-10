@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appalti</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Open Data: legalità e partecipazione</h1>
+    </header>
+    <h1>Aggiungi Appalto</h1>
+    <form id="appalto-form" method="post">
+      <div>
+        <label for="cig">CIG:</label>
+        <input type="text" id="cig" name="CIG" />
+      </div>
+      <div>
+        <label for="oggetto">Oggetto:</label>
+        <input type="text" id="oggetto" name="OGGETTO" />
+      </div>
+      <div>
+        <label for="appaltante">Amministrazione Appaltante:</label>
+        <input type="text" id="appaltante" name="AMMINISTRAZIONE APPALTANTE" />
+      </div>
+      <div>
+        <label for="pubblicazione">Pubblicazione:</label>
+        <input type="date" id="pubblicazione" name="DATA PUBBLICAZIONE" />
+      </div>
+      <div>
+        <label for="data_aggiudicazione">Data aggiudicazione:</label>
+        <input type="date" id="data_aggiudicazione" name="DATA AGGIUDICAZIONE" />
+      </div>
+      <div>
+        <label for="asta">Valore a base d'asta:</label>
+        <input type="number" step=".01" inputmode="decimal" id="asta" name="VALORE A BASE D'ASTA" />
+      </div>
+      <div>
+        <label for="aggiudicazione">Valore d'aggiudicazione:</label>
+        <input type="number" step=".01"  id="aggiudicazione" name="VALORE AGGIUDICAZIONE" />
+      </div>
+      <div>
+        <label for="localizzazione">Localizzazione:</label>
+        <input type="text" id="localizzazione" name="LOCALIZZAZIONE" />
+      </div>
+      <div>
+        <label for="tipo">Tipo di contratto:</label>
+        <select id="tipo" name="TIPOLOGIA CONTRATTO">
+          <option value="SERVIZI">Servizi</option>
+          <option value="FORNITURE">Forniture</option>
+          <option value="LAVORI">Lavori</option>
+        </select>
+      </div>
+      <div>
+        <input type="submit" value="Aggiungi" />
+      </div>
+    </form>
+    <footer>
+      <a href="mailto:slorenzo.rabittitancredi@itis.pr.it"
+        >slorenzo.rabittitancredi@itis.pr.it</a
+      ><a href="https://www.itis.pr.it/">ITIS</a
+      ><a href="mailto:salessandro.bruni1@itis.pr.it"
+        >salessandro.bruni1@itis.pr.it</a
+      >
+    </footer>
+    <div id="notifiche"></div>
+    <script src="../script/form.js"></script>
+  </body>
+</html>
