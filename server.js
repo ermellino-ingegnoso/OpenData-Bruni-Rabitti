@@ -23,6 +23,10 @@ app.get("/", function(req,res) {
     res.sendFile('index.html');
 });
 
+app.get("/lavoro", function(req,res) {
+    res.sendFile(__dirname + '/public/pages/lavoro.html');
+});
+
 app.get('/docs', (req, res) => {
     fs.readFile('./public/data/docs.txt', (err, data) => {
       if (err) {

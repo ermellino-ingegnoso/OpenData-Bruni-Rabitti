@@ -2,6 +2,11 @@ var listAppalti;
 var listAppaltiSort;
 const currentSort=["asc","desc"]
 
+function show_loading_screen()
+{
+    document.getElementById("loading_screen").classList.toggle("hidden")
+}
+
 async function loadAppalti(){
     listAppalti=await (await fetch("/appalti")).json()
 }
@@ -68,8 +73,10 @@ function sortTable(el) {
 
 
 window.addEventListener("load",async function(){
+    show_loading_screen();
     await loadAppalti();
     listAppaltiSort=[...listAppalti];
     generateTable(listAppalti);
+    show_loading_screen();
 })
 
