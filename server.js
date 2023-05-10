@@ -17,13 +17,22 @@ app.use(cors({
   }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-var appalti = require('./public/data/appalti.json')
-
+var appalti = require('./public/data/appalti.json');
 
 app.get("/", function(req,res) {
     res.sendFile('index.html');
 });
 
+app.get('/docs', (req, res) => {
+    fs.readFile('./public/data/docs.txt', (err, data) => {
+      if (err) {
+        res.status(500).send('Errore nel leggere il file.');
+      } else {
+        res.setHeader('Content-Type', 'text/plain');
+        res.send(data);
+      }
+    });
+  });
 
 app.get("/appalti", function(req,res) {
     res.json(appalti);
