@@ -16,7 +16,6 @@ app.use(cors({
     origin: '*'
   }));
 app.use(bodyParser.json());
-
 var appalti = require('./public/data/appalti.json');
 
 function appaltoRegex(appalto)

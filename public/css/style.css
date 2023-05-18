@@ -8,6 +8,7 @@ html {
 }
 h1{
   color:#3700B3;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 body {
   line-height: 1.5;
@@ -17,11 +18,11 @@ body {
   font-family: Tisa Sans Pro Light;
 }
 
-header,
-footer {
-  height: 10vh;
+header{
   display: flex;
-  border: 1px solid black;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .two-divs {
