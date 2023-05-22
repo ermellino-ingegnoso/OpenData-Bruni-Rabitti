@@ -149,5 +149,5 @@ app.use("*", function(req,res,next){
 
 const server = app.listen(app.get('port'), function(){
     console.log('Server in ascolto');
-    console.log('http://localhost:'+app.get('port'))
+
 });
