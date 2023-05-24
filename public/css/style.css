@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 * {
   margin: 0;
   box-sizing: border-box;
@@ -7,23 +10,46 @@ html {
   height: 100vh;
 }
 
-header>h1{
-  color:#3700B3;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+h2,
+h3,
+h4,
+.title {
+  font-family: 'Lato', sans-serif;
+  color: #C060A1;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+table,
+tr,
+td,
+th {
+  border: none !important;
+}
+
+.header-container h1 {
   font-size: 1.5rem;
   text-align: center;
+  white-space: nowrap;
 }
 
 body {
   line-height: 1.5;
   height: 100%;
-  background-color: #121212;
-  color: #BB86FC;
-  font-family: Tisa Sans Pro Light;
+  background-color: #00005C;
+    color: #ffc5ed;
+    font-family: 'Nunito', sans-serif;
+  }
+  
+  .hover1 {
+    background-color: #0000238f;
+    padding: 20px;
+    border-radius: 20px;
 }
 
 header {
-  background-color: #fff;
+  background-color: #000023;
+    color: #F0CAA3;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
@@ -31,12 +57,24 @@ header {
   text-align: center;
 }
 
+.header-container>nav>ul>li>a {
+  color: #F0CAA3;
+}
+
+footer>a {
+  font-size: 1em;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  color: #F0CAA3;
+  text-decoration: none;
+}
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   max-width: 1200px;
+  font-family: 'Poppins', sans-serif;
 }
 
 
@@ -51,40 +89,38 @@ nav li {
 }
 
 nav a {
-  color: #000;
   text-decoration: none;
   font-weight: bold;
   font-size: 1rem;
   transition: color 0.2s ease-in-out;
 }
 
-nav a:hover {
-  color: #007bff;
+a:hover {
+  color: #C060A1 !important;
+  /*ffa54c*/
 }
 
 
 .two-divs {
   display: flex;
   align-items: center;
-  border: 1px solid black;
   min-height: 20vh;
 }
 
-.two-divs > div {
+.two-divs>div {
   flex-basis: 40%;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
   margin: 0 5% 0 5%;
 }
 
-body > div {
+body>div {
   margin-top: 1em;
   margin-bottom: 1em;
 }
 
-div > * {
+div>* {
   margin: 0.3em;
 }
 
@@ -92,7 +128,7 @@ div > * {
   margin: 0 6em 0 6em;
 }
 
-.text-div>p{
+.text-div>p {
   margin-top: 1em;
   margin-bottom: 1em;
 }
@@ -106,12 +142,21 @@ footer {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  background-color: #0000238f;
+    padding: 30px;
+    border-radius: 20px;
+    width: 80%;
 }
 
-footer *{
-  margin: 0.2em;
+#footer {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
+#fakeFooter {
+  padding: 10px;
+}
 table,
 tr,
 th,
@@ -147,6 +192,11 @@ th div {
   flex-direction: column;
 }
 
+table th,
+td {
+  min-width: 100px !important;
+  padding: 10px;
+}
 table {
   display: block;
   max-width: 90%;
@@ -183,6 +233,7 @@ table {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -217,6 +268,7 @@ table {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
 #appalto-form input[type="submit"] {
   background-color: #4caf50;
   color: #fff;
@@ -225,12 +277,13 @@ table {
   border-radius: 4px;
   cursor: pointer;
 }
+
 #appalto-form input[type="submit"]:hover {
   background-color: #3e8e41;
 }
 
 #notifiche {
-    position: fixed;
+  position: fixed;
     top: 1em;
     right: 1em;
     display: flex;
@@ -240,7 +293,7 @@ table {
 }
 
 .notifica {
-    background-color: white;
+  background-color: white;
     border-radius: 5px;
     padding: 1rem 2rem;
     margin: .5rem;
@@ -249,12 +302,12 @@ table {
     color: black;
 }
 
-.notif_error{
-    border: 2px solid red;
+.notif_error {
+  border: 2px solid red;
 }
 
-.notif_success{
-    border: 2px solid #3e8e41;
+.notif_success {
+  border: 2px solid #3e8e41;
 }
 
 /*@media (max-width: 1024px)
@@ -281,7 +334,7 @@ table {
 }
 
 @media (max-width: 600px) {
-  footer{
+  footer {
     flex-direction: column;
   }
 }
