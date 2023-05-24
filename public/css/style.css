@@ -6,10 +6,14 @@
 html {
   height: 100vh;
 }
-h1{
+
+header>h1{
   color:#3700B3;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
 }
+
 body {
   line-height: 1.5;
   height: 100%;
@@ -18,12 +22,46 @@ body {
   font-family: Tisa Sans Pro Light;
 }
 
-header{
+header {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
 }
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+nav li {
+  margin-left: 3rem;
+}
+
+nav a {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.2s ease-in-out;
+}
+
+nav a:hover {
+  color: #007bff;
+}
+
 
 .two-divs {
   display: flex;
@@ -51,7 +89,12 @@ div > * {
 }
 
 .text-div {
-  margin: 0 2em 0 2em;
+  margin: 0 6em 0 6em;
+}
+
+.text-div>p{
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .img-div img {
@@ -63,6 +106,10 @@ footer {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+}
+
+footer *{
+  margin: 0.2em;
 }
 
 table,
@@ -216,3 +263,25 @@ table {
         flex-direction: column;
     }
 }*/
+
+@media (max-width: 800px) {
+  .header-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  nav ul {
+    margin-top: 1rem;
+  }
+
+  nav li {
+    margin: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  footer{
+    flex-direction: column;
+  }
+}

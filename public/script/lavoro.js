@@ -1,13 +1,21 @@
 var listLavoro;
 var listLavoroSort;
 const currentSort=["asc","desc"]
+const lookupLavoro=
+{
+  "regione":"Regione",
+  "tasso_occ":"Tasso Occupazione",
+  "tasso_dis":"Tasso Disoccupazione",
+  "stipendi_lordi_media":"Media stipendi lordi"
+
+}
 
 function show_loading_screen()
 {
     document.getElementById("loading_screen").classList.toggle("hidden")
 }
 
-async function loadAppalti(){
+async function loadLavoro(){
     listLavoro=await (await fetch("https://api-tep-cultura.vercel.app/api/lavoro")).json()
 }
 
@@ -16,7 +24,7 @@ function generateTable(list)
     document.getElementById("dati").innerHTML=`
         <table>
         <thead>
-            ${Object.keys(list[0]).reduce((tot,v)=>tot+="<th>"+"<div><div class='table_arrow'><span data-sort='"+v+"' data-currentsort=''></span></div>"+"<div>"+v+"<div/></div>"+"</th>","")}
+            ${Object.keys(list[0]).reduce((tot,v)=>tot+="<th>"+"<div><div class='table_arrow'><span data-sort='"+v+"' data-currentsort=''></span></div>"+"<div>"+lookupLavoro[v]+"<div/></div>"+"</th>","")}
         </thead>
         <tbody>
             ${list.reduce(function(tot,v){
@@ -74,7 +82,7 @@ function sortTable(el) {
 
 window.addEventListener("load",async function(){
     show_loading_screen();
-    await loadAppalti();
+    await loadLavoro();
     listLavoroSort=[...listLavoro];
     generateTable(listLavoro);
     show_loading_screen();
