@@ -113,7 +113,7 @@ app.get('/appalti/contratto/:contratto', function(req,res){
     res.json(filteredAppalti);
 });
 
-app.post('/aggiuntaAppalto', function(req,res){
+app.post('/aggiuntaAppalto', async function(req,res){
     let obj_esito = Object.fromEntries(Object.keys(req.body).map(chiave => [chiave, true]));
     Object.keys(obj_esito).forEach(el=>{
         if(el=="CIG"){obj_esito[el]=appaltoRegex(req.body[el]) && !controlloDuplicati("CIG",req.body[el])}
@@ -125,14 +125,12 @@ app.post('/aggiuntaAppalto', function(req,res){
     if(arrErrori.length==0)
     {
         appalti.push(req.body);
-        try
-            {
-                fs.writeFileSync('./public/data/appalti.json', JSON.stringify(appalti));
-                res.sendStatus(200);
-            }
-        catch{
+        try {
+            await fs.promises.writeFile('./public/data/appalti.json', JSON.stringify(appalti));
+            res.sendStatus(200);
+          } catch {
             res.status(400).send("Errore nella sovrascrittura del file, appalto non aggiunto");
-        }
+          }
     }
     else{
         let testo_errori=arrErrori.reduce((tot,v)=>tot+=v+"<br>","")
