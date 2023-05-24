@@ -19,7 +19,7 @@ app.use(cors({
     origin: '*'
   }));
 app.use(bodyParser.json());
-//var appalti = require('./public/data/appalti.json');
+var appalti = require('./public/data/appalti.json');
 var appalti_db;
 
 const collection = client.db('appalti').collection('appalti');
@@ -32,18 +32,6 @@ changeStream.on('change', async next => {
     })
     })
 
-async function readJsonFile() {
-    try {
-      await client.connect();
-      appalti_db = await collection.find({}).toArray();
-      appalti_db=appalti_db.map(el=>{
-        delete el._id;
-        return el;
-    }
-        )
-    } finally {
-    }
-  }
 
 
 function appaltoRegex(appalto)
@@ -73,7 +61,7 @@ function testoRegex(testo)
 
 function controlloDuplicati(key,val)
 {
-    let arr_val=appalti_db.map(el=>el[key]);
+    let arr_val=appalti.map(el=>el[key]);
     return arr_val.includes(val);
 }
 
@@ -101,43 +89,43 @@ app.get('/docs', (req, res) => {
   });
 
 app.get("/appalti", function(req,res) {
-    res.json(appalti_db);
+    res.json(appalti);
 });
 
 app.get('/appalti/CIG/:cig', function(req, res){
     const cig = req.params.cig;
-    const filteredAppalti = appalti_db.filter(appalto => appalto["CIG"] === cig.toUpperCase());
+    const filteredAppalti = appalti.filter(appalto => appalto["CIG"] === cig.toUpperCase());
     res.json(filteredAppalti);
 });
 
 app.get('/appalti/dataAdOggi/:data', function(req,res){
     const data = new Date(req.params.data);
-    const filteredAppalti = appalti_db.filter(appalto => new Date(appalto["DATA PUBBLICAZIONE"]) >= data);
+    const filteredAppalti = appalti.filter(appalto => new Date(appalto["DATA PUBBLICAZIONE"]) >= data);
     res.json(filteredAppalti);
 });
 
 app.get('/appalti/data/:data', function(req,res){
     const data = req.params.data;
-    const filteredAppalti = appalti_db.filter(appalto => appalto["DATA PUBBLICAZIONE"] === data);
+    const filteredAppalti = appalti.filter(appalto => appalto["DATA PUBBLICAZIONE"] === data);
     res.json(filteredAppalti);
 });
 
 app.get('/appalti/valBaseAsta/:minmax', function(req,res){
     const [min, max] = req.params.minmax.split('-').map(val => parseInt(val));
-    const filteredAppalti = appalti_db.filter(appalto => appalto["VALORE A BASE DI ASTA"] >= min && appalto["VALORE A BASE DI ASTA"] <= max);
+    const filteredAppalti = appalti.filter(appalto => appalto["VALORE A BASE DI ASTA"] >= min && appalto["VALORE A BASE DI ASTA"] <= max);
     res.json(filteredAppalti);
 });
 
 app.get('/appalti/loc/:loc', function(req,res){
     let loc = req.params.loc;
     loc=loc.replaceAll("_"," ");
-    const filteredAppalti = appalti_db.filter(appalto => appalto["LOCALIZZAZIONE"].toLowerCase() === loc.toLowerCase());
+    const filteredAppalti = appalti.filter(appalto => appalto["LOCALIZZAZIONE"].toLowerCase() === loc.toLowerCase());
     res.json(filteredAppalti);
 });
 
 app.get('/appalti/contratto/:contratto', function(req,res){
     const contratto = req.params.contratto;
-    const filteredAppalti = appalti_db.filter(appalto => appalto["TIPOLOGIA CONTRATTO"].toLowerCase() === contratto.toLowerCase());
+    const filteredAppalti = appalti.filter(appalto => appalto["TIPOLOGIA CONTRATTO"].toLowerCase() === contratto.toLowerCase());
     res.json(filteredAppalti);
 });
 
@@ -176,7 +164,7 @@ app.use("*", function(req,res,next){
 
 const server = app.listen(app.get('port'), async function(){
     console.log('Server in ascolto');
-    await readJsonFile("appalti","appalti");
-    console.log(appalti_db)
+    //await readJsonFile("appalti","appalti");
+    //console.log(appalti_db)
     //  console.log('http://localhost:'+app.get('port'))
 });
