@@ -7,12 +7,12 @@ const { json } = require("body-parser");
 const fs = require("fs");
 var app = express(); // cambiato l'ambito di visibilità
 const { MongoClient } = require("mongodb");
-const uri =
+//const uri =
     "mongodb+srv://opendatatep:x9AhDgW1KvCx3Vtw@opendatatep.yv8t4tb.mongodb.net/?retryWrites=true&w=majority";
-const client = new MongoClient(uri, {
+/*const client = new MongoClient(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-});
+});*/
 
 app.set("port", process.env.PORT || 3000);
 app.set("appName", "Appalti");
@@ -28,7 +28,7 @@ app.use(bodyParser.json());
 var appalti = require("./public/data/appalti.json");
 var appalti_db;
 
-const collection = client.db("appalti").collection("appalti");
+/* const collection = client.db("appalti").collection("appalti");
 const changeStream = collection.watch();
 changeStream.on("change", async (next) => {
     appalti_db = await collection.find({}).toArray();
@@ -47,7 +47,7 @@ async function readJsonFile() {
         });
     } finally {
     }
-}
+}   */
 function appaltoRegex(appalto) {
     const regex = /^[a-zA-Z][a-zA-Z0-9]{9}$/;
     return Boolean(appalto.match(regex));
