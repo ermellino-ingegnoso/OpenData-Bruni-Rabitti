@@ -183,7 +183,7 @@ app.post("/aggiuntaAppalto", async function (req, res) {
         (el) => obj_esito[el] == false
     );
     if (arrErrori.length == 0) {
-        //appalti.push(req.body);
+        appalti.push(req.body);
         try {
             await fs.promises.writeFile('./public/data/appalti.json', JSON.stringify(appalti));
             //collection.insertOne(req.body);
